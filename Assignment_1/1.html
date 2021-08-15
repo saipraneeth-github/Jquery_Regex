@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>1</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+		}
+		.container{
+			width:1100px;
+			border: 3px solid black;
+			margin: auto;
+			text-align: center;
+			margin-top: 3%;
+			background-color: #FAEBD7;
+		}
+		#pic{
+			height: 550px;
+			width: 1000px;
+			margin-top: 1%;
+			border: 5px solid black;
+			border-radius: 100px;
+		}
+		.buttons{
+			margin-bottom:2%;
+
+		}
+	</style>
+</head>
+<body>
+
+<div class="container">
+	<h1>Image Switcher</h1>
+	<img src="1.jpg" id="pic">
+	<br><br>
+	<button id="previous" class="buttons">Previous</button>
+	<button id="next" class="buttons">Next</button>
+</div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	var n=1;
+	$("#previous").click(function(){
+		if (n>1){
+			n=n-1;
+		}else{
+			n=5;
+		}
+		console.log(n);
+		document.getElementById('pic').src= n+".jpg";
+	});
+	$("#next").click(function(){
+		if(n<5){
+			n = n+1;
+		}else{
+			n = 1;
+		}
+		console.log(n);
+		document.getElementById('pic').src= n+".jpg";
+	});
+});
+
+</script>
+</html>
